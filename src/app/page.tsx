@@ -13,12 +13,7 @@ const Page = () => {
     }
   };
 
-  const sections = [
-    "home",
-    "about",
-    "projects",
-    "contact",
-  ];
+  const sections = ["home", "about", "projects", "contact"];
 
   return (
     <div>
@@ -43,7 +38,10 @@ const Page = () => {
 
       <div className="mt-20 flex">
         <div>
-          <div className="text-8xl pl-30 textblue1">Hi, I'm <br />SamRytech</div>
+          <div className="text-8xl pl-30 textblue1">
+            Hi, I'm <br />
+            SamRytech
+          </div>
           <div className="pl-30">I'm a web developer</div>
           <div className="pl-30">
             <a href="#projects">
@@ -52,12 +50,24 @@ const Page = () => {
           </div>
         </div>
         <div>
-          <img src="/images/PFP.png" alt="" className="w-1/2 h-auto"/>
+          <img src="/images/PFP.png" alt="" className="w-1/2 h-auto" />
         </div>
       </div>
-      
 
-
+      <div>
+        <div>
+          <div>
+            <span>About Me</span>
+          </div>
+          <div>
+            <span>Web Developer</span>
+          </div>
+          <div>
+            <span>I am </span>
+          </div>
+        </div>
+        <div></div>
+      </div>
     </div>
   );
 };
