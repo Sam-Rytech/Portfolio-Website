@@ -63,10 +63,12 @@ const Page = () => {
             <span>Web Developer</span>
           </div>
           <div>
-            <span>I am </span>
+            <span>I am a passionate web developer, who creates visually appealing, user-friendly websites.</span>
           </div>
         </div>
-        <div></div>
+        <div>
+          
+        </div>
       </div>
     </div>
   );
