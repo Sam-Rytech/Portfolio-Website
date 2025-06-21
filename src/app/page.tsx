@@ -49,7 +49,7 @@ const Page = () => {
             Hi, I'm <br />
             SamRytech
           </div>
-          <div className="pl-30">I'm a web developer</div>
+          <div className="pl-30">I'm a Front End Developer</div>
           <div className="pl-30">
             <a href="#projects">
               <button>View My Work</button>
@@ -67,12 +67,12 @@ const Page = () => {
             <span>About Me</span>
           </div>
           <div>
-            <span>Web Developer</span>
+            <span>Front End Developer</span>
           </div>
           <div>
             <span>
-              I am a passionate web developer, who creates visually appealing,
-              user-friendly websites.
+              I am a passionate Front End Developer, who creates visually
+              appealing, user-friendly websites.
             </span>
           </div>
         </div>
@@ -204,6 +204,44 @@ const Page = () => {
           </div>
         </div>
       </section>
+
+      <footer className="bg-gray-900 text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="mb-4 md:mb-0">
+              <span className="text-2xl font-bold">SamRytech</span>
+              <p className="text-gray-400 mt-2">Front End Developer</p>
+            </div>
+            <div className="flex space-x-6">
+              <a
+                href="https://github.com/Sam-Rytech"
+                className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+              >
+                GitHub
+              </a>
+              <a
+                href=""
+                className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://x.com/Sam_rytech"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+              >
+                Twitter
+              </a>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center">
+            <p className="text-gray-400">
+              © 2024 SamRytech. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
