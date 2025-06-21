@@ -1,2 +1,20 @@
 @import "tailwindcss";
 
+.gold{
+    color:#f7a938;
+}
+.blue1{
+    color: #058ed1;
+}
+.blue2{
+    color: #0180a7;
+}
+.blue3{
+    color: #004482;
+}
+.textblue1{
+    color: #2e4355;
+}
+.textblue2{
+    color: #1c82ad;
+}

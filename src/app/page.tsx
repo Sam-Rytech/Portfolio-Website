@@ -22,8 +22,8 @@ const Page = () => {
 
   return (
     <div>
-      <nav className="fixed top-0 left-0 w-full bg-white shadow z-50 px-6 py-4 flex justify-between items-center">
-        <div className="text-xl font-bold">SamRytech</div>
+      <nav className="fixed top-0 left-0 w-full bg-white z-50 px-6 py-4 flex justify-between items-center">
+        <div className="text-xl font-bold textblue1">SamRytech</div>
         <div className="hidden md:flex items-center space-x-8">
           {sections.map((item) => (
             <button
@@ -41,7 +41,23 @@ const Page = () => {
         </div>
       </nav>
 
+      <div className="mt-20 flex">
+        <div>
+          <div className="text-8xl pl-30 textblue1">Hi, I'm <br />SamRytech</div>
+          <div className="pl-30">I'm a web developer</div>
+          <div className="pl-30">
+            <a href="#projects">
+              <button>View My Work</button>
+            </a>
+          </div>
+        </div>
+        <div>
+          <img src="/images/PFP.png" alt="" className="w-1/2 h-auto"/>
+        </div>
+      </div>
       
+
+
     </div>
   );
 };
