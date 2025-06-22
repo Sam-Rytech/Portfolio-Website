@@ -49,15 +49,15 @@ const Page = () => {
             Hi, I'm <br />
             SamRytech
           </div>
-          <div className="pl-30">I'm a Front End Developer</div>
+          <div className="pl-30 textblue2">I'm a Front End Developer</div>
           <div className="pl-30">
             <a href="#projects">
-              <button>View My Work</button>
+              <button className="textblue1 border-2 px-3.5 py-1 goldb rounded-full">View My Work</button>
             </a>
           </div>
         </div>
         <div>
-          <img src="/images/PFP.png" alt="" className="w-1/2 h-auto" />
+          <img src="/images/Pf.png" alt="" className="w-1/2 h-auto" />
         </div>
       </div>
 
