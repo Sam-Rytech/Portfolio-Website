@@ -46,14 +46,25 @@ const Page = () => {
       <div className="mt-20 flex">
         <div>
           <div className="text-8xl pl-30 textblue1">
-            Hi, I'm <br />
+            Hi, I'm
+            <br />
             SamRytech
           </div>
-          <div className="pl-30 textblue2">I'm a Front End Developer</div>
-          <div className="pl-30">
-            <a href="#projects">
-              <button className="textblue1 border-2 px-3.5 py-1 goldb rounded-full">View My Work</button>
-            </a>
+          <div className="pl-30 textblue2 text-2xl mt-5">
+            I'm a Front End Developer
+          </div>
+          <div className="pl-30 mt-5">
+            <button
+              onClick={() => {
+                const element = document.getElementById("projects");
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              className="textblue1 border-2 px-3.5 py-1 goldb rounded-full "
+            >
+              View My Work
+            </button>
           </div>
         </div>
         <div>
@@ -61,7 +72,7 @@ const Page = () => {
         </div>
       </div>
 
-      <div id="about">
+      <div id="about" className="scroll-mt-24">
         <div>
           <div>
             <span>About Me</span>
@@ -94,7 +105,7 @@ const Page = () => {
         </div>
       </div>
 
-      <div id="projects">
+      <div id="projects" className="scroll-mt-24">
         <div>
           <span>Featured Projects</span>
         </div>
@@ -105,7 +116,10 @@ const Page = () => {
         </div>
       </div>
 
-      <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section
+        id="contact"
+        className="scroll-mt-24 py-20 bg-gray-50 dark:bg-gray-800"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
