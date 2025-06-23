@@ -24,8 +24,8 @@ const Page = () => {
 
   return (
     <div>
-      <nav className="fixed top-0 left-0 w-full bg-white z-50 px-6 py-4 flex justify-between items-center ">
-        <div className="text-xl font-bold textblue1">SamRytech</div>
+      <nav className="fixed top-0 left-0 w-full bg-white z-50 px-[10%] py-4 flex justify-between items-center">
+        <div className="text-xl font-bold textblue1 ">SamRytech</div>
         <div className="hidden md:flex items-center space-x-8">
           {sections.map((item) => (
             <button
@@ -43,17 +43,17 @@ const Page = () => {
         </div>
       </nav>
 
-      <div className="mt-20 flex">
-        <div>
-          <div className="text-8xl pl-30 textblue1">
+      <div className="mt-30 flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mt-15 mr-45">
+          <div className="text-8xl  textblue1 ">
             Hi, I'm
             <br />
             SamRytech
           </div>
-          <div className="pl-30 textblue2 text-2xl mt-5">
+          <div className=" textblue2 text-2xl mt-5">
             I'm a Front End Developer
           </div>
-          <div className="pl-30 mt-5">
+          <div className="mt-5">
             <button
               onClick={() => {
                 const element = document.getElementById("projects");
@@ -61,27 +61,27 @@ const Page = () => {
                   element.scrollIntoView({ behavior: "smooth" });
                 }
               }}
-              className="textblue1 border-2 px-3.5 py-1 goldb rounded-full "
+              className="textblue1 border-2 px-3.5 py-1 goldb rounded-full hover:bg-yellow-100 transition"
             >
               View My Work
             </button>
           </div>
         </div>
-        <div>
-          <img src="/images/Pf.png" alt="" className="w-1/2 h-auto" />
+        <div className="">
+          <img src="/images/Pf.png" alt="" className="w-140" draggable={false} />
         </div>
       </div>
 
       <div id="about" className="scroll-mt-24">
-        <div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div>
-            <span>About Me</span>
+            <span className="textblue1">About Me</span>
           </div>
           <div>
-            <span>Front End Developer</span>
+            <span className="textblue1">Front End Developer</span>
           </div>
           <div>
-            <span>
+            <span className="textblue1">
               I am a passionate Front End Developer, who creates visually
               appealing, user-friendly websites.
             </span>
@@ -116,11 +116,11 @@ const Page = () => {
         </div>
       </div>
 
-      <section
-        id="contact"
-        className="scroll-mt-24 py-20 bg-gray-50 dark:bg-gray-800"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+        <div
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24"
+          id="contact"
+        >
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Get In Touch
