@@ -110,11 +110,12 @@ const Page = () => {
 
       <section id="about" className="relative min-h-screen py-20">
         <div className="container mx-auto px-4">
-          <h2 className="section-heading text-center">
-            <span className="textblue1 text-2xl">About Me</span>
+          <h2 className="section-heading text-center ">
+            <span className="textblue1 text-4xl font-bold">About Me</span>
           </h2>
-          <div className="mt-20 grid gap-12 lg:grid-cols-2">
-            <div className="gradient-border glass-effect rounded-xl p-8">
+          <div className="w-20 h-1 custom-gradient mx-auto mt-4"></div>
+          <div className="mt-15 grid gap-12 lg:grid-cols-2">
+            <div className="gradient-border glass-effect rounded-xl p-8 ml-26">
               <div className="mt-6 space-y-4 textblue">
                 <p>
                   I'm a passionate Front-End Developer with a love for turning
@@ -138,7 +139,7 @@ const Page = () => {
             </div>
             <div className="space-y-8">
               <div className="gradient-border glass-effect rounded-xl p-8">
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-2 gap-6 pt-5">
                   <div
                     className="stat-item text-center"
                     style={{
@@ -146,10 +147,10 @@ const Page = () => {
                       opacity: 1,
                     }}
                   >
-                    <div className="font-montserrat text-3xl font-bold text-theme-200">
+                    <div className="font-montserrat text-3xl font-bold textblue1">
                       1+
                     </div>
-                    <div className="mt-2 text-sm text-gray-400">
+                    <div className="mt-2 text-sm textblue1">
                       Years Experience
                     </div>
                   </div>
@@ -160,10 +161,10 @@ const Page = () => {
                       opacity: 1,
                     }}
                   >
-                    <div className="font-montserrat text-3xl font-bold text-theme-200">
+                    <div className="font-montserrat text-3xl font-bold textblue1">
                       10+
                     </div>
-                    <div className="mt-2 text-sm text-gray-400">
+                    <div className="mt-2 text-sm textblue1">
                       Projects Completed
                     </div>
                   </div>
@@ -174,12 +175,10 @@ const Page = () => {
                       opacity: 1,
                     }}
                   >
-                    <div className="font-montserrat text-3xl font-bold text-theme-200">
+                    <div className="font-montserrat text-3xl font-bold textblue1">
                       6+
                     </div>
-                    <div className="mt-2 text-sm text-gray-400">
-                      Technologies
-                    </div>
+                    <div className="mt-2 text-sm textblue1">Technologies</div>
                   </div>
                 </div>
               </div>
@@ -189,27 +188,48 @@ const Page = () => {
       </section>
 
       <div id="projects" className="scroll-mt-24">
-        <div>
-          <span>Featured Projects</span>
+        <div className="text-center mb-4">
+          <span className="text-4xl font-bold">
+            Projects <br />
+          </span>
+          <div className="w-20 h-1 custom-gradient mx-auto mt-4"></div>
         </div>
-        <div>
-          <div>Projects One</div>
-          <div>Project Two</div>
-          <div>Project Three</div>
+        <div className="mx-auto text-center">
+          <span>
+            A showcase of my works, including completed and ongoing projects
+          </span>
+        </div>
+        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3 mx-[10%]">
+          <div className="w-[350px] h-[268px] border rounded-2xl">
+            Projects One
+          </div>
+          <div className="w-[350px] h-[268px] border rounded-2xl">
+            Project Two
+          </div>
+          <div className="w-[350px] h-[268px] border rounded-2xl">
+            Project Three
+          </div>
+          <div className="w-[350px] h-[268px] border rounded-2xl">
+            Project Three
+          </div>
+          <div className="w-[350px] h-[268px] border rounded-2xl">
+            Project Three
+          </div>
+          <div className="w-[350px] h-[268px] border rounded-2xl">
+            Project Three
+          </div>
         </div>
       </div>
 
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section className="py-20">
         <div
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24"
           id="contact"
         >
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Get In Touch
-            </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-yellow-500 mx-auto"></div>
-            <p className="text-lg text-gray-600 dark:text-gray-300 mt-6">
+            <h2 className="text-4xl font-bold textblue1 mb-4">Get In Touch</h2>
+            <div className="w-20 h-1 custom-gradient mx-auto"></div>
+            <p className="text-lg textblue1 mt-6">
               I'm always open to discussing new opportunities and interesting
               projects.
             </p>
@@ -219,37 +239,37 @@ const Page = () => {
             <div>
               <div className="space-y-6">
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-yellow-500 rounded-lg flex items-center justify-center text-white mr-4">
+                  <div className="w-12 h-12 custom-gradient rounded-lg flex items-center justify-center text-white mr-4">
                     📧
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white">
+                    <h4 className="font-semibold textblue1">
                       Email
                     </h4>
-                    <p className="text-gray-600 dark:text-gray-300">
-                      alex.johnson@email.com
+                    <p className="textblue1">
+                      temitayoomolayo@gmail.com
                     </p>
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-yellow-500 rounded-lg flex items-center justify-center text-white mr-4">
+                  <div className="w-12 h-12 custom-gradient rounded-lg flex items-center justify-center text-white mr-4">
                     📱
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white">
+                    <h4 className="font-semibold textblue1">
                       Phone
                     </h4>
-                    <p className="text-gray-600 dark:text-gray-300">
-                      +1 (555) 123-4567
+                    <p className="textblue1">
+                      +234 814 794 1672
                     </p>
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-yellow-500 rounded-lg flex items-center justify-center text-white mr-4">
+                  <div className="w-12 h-12 custom-gradient rounded-lg flex items-center justify-center text-white mr-4">
                     📍
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white">
+                    <h4 className="font-semibold textblue1">
                       Location
                     </h4>
                     <p className="text-gray-600 dark:text-gray-300">
