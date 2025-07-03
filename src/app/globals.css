@@ -1,23 +1,48 @@
 @import "tailwindcss";
 
-.gold{
-    color:#f7a938;
+:root {
+  --color-blue1: #2e4355;
+  --color-goldb: #f7a938;
 }
-.goldb{
-    border-color: #f7a938;
+
+.goldb {
+  border-color: var(--color-goldb);
 }
-.blue1{
-    color: #058ed1;
+
+.textblue1 {
+  color: var(--color-blue1);
 }
-.blue2{
-    color: #0180a7;
+
+.gold {
+  color: #f7a938;
 }
-.blue3{
-    color: #004482;
+.blue1 {
+  color: #058ed1;
 }
-.textblue1{
-    color: #2e4355;
+.blue2 {
+  color: #0180a7;
 }
-.textblue2{
-    color: #1c82ad;
+.blue3 {
+  color: #004482;
+}
+.textblue2 {
+  color: #1c82ad;
+}
+.custom-gradient {
+  background-image: linear-gradient(
+    to right,
+    var(--color-blue1),
+    var(--color-goldb)
+  );
+}
+.text-gradient {
+  background-image: linear-gradient(
+    to right,
+    var(--color-blue1),
+    var(--color-goldb)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* For modern support */
+  color: transparent;
 }
