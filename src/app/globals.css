@@ -1,33 +1,42 @@
 @import "tailwindcss";
 
+/* Root custom colors */
 :root {
   --color-blue1: #2e4355;
   --color-goldb: #f7a938;
 }
 
-.goldb {
-  border-color: var(--color-goldb);
-}
-
+/* Light mode text */
 .textblue1 {
   color: var(--color-blue1);
+}
+
+.textblue2 {
+  color: #1c82ad;
+}
+
+/* Accent colors */
+.goldb {
+  border-color: var(--color-goldb);
 }
 
 .gold {
   color: #f7a938;
 }
+
 .blue1 {
   color: #058ed1;
 }
+
 .blue2 {
   color: #0180a7;
 }
+
 .blue3 {
   color: #004482;
 }
-.textblue2 {
-  color: #1c82ad;
-}
+
+/* Gradients */
 .custom-gradient {
   background-image: linear-gradient(
     to right,
@@ -35,6 +44,7 @@
     var(--color-goldb)
   );
 }
+
 .text-gradient {
   background-image: linear-gradient(
     to right,
@@ -43,6 +53,41 @@
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text; /* For modern support */
+  background-clip: text;
   color: transparent;
+}
+
+/* 🌙 Dark mode overrides */
+html {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+html.dark {
+  background-color: #000000;
+  color: #ffffff;
+}
+.dark .textblue1,
+.dark .textblue2 {
+  color: #ffffff !important;
+}
+
+.dark .custom-gradient {
+  background-image: linear-gradient(to right, #2e4355, #f7a938); /* darker blue/gold */
+}
+
+.dark .text-gradient {
+  background-image: linear-gradient(to right, #ffffff, #f7a938);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.nav-bg {
+  background-color: white;
+}
+
+.dark .nav-bg {
+  background-color: black;
 }

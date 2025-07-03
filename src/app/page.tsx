@@ -1,13 +1,35 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./globals.css";
 
 const Page = () => {
   const [activeSection, setActiveSection] = useState("home");
+
+  const [darkMode, setDarkMode] = useState(false);
+
+  // On mount, check system preference or localStorage
+  useEffect(() => {
+    const isDark = document.documentElement.classList.contains("dark");
+    setDarkMode(isDark);
+  }, []);
+  
+
+  // Toggle theme
+  const toggleDarkMode = () => {
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    if (newMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  };
+
   const [submissionStatus, setSubmissionStatus] = useState<
     "success" | "error" | null
   >(null);
-
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -16,9 +38,9 @@ const Page = () => {
     const formData = new FormData(form);
 
     const data = {
-      name: formData.get("name") as string,
-      email: formData.get("email") as string,
-      message: formData.get("message") as string,
+      name: formData.get("Name") as string,
+      email: formData.get("Email") as string,
+      message: formData.get("Message") as string,
     };
 
     const response = await fetch("https://formspree.io/f/mdkzjpkd", {
@@ -40,9 +62,8 @@ const Page = () => {
     // Reset the message after a few seconds
     setTimeout(() => setSubmissionStatus(null), 5000);
   };
-  
 
-  const scrollToSection = (sectionId: string) => {    
+  const scrollToSection = (sectionId: string) => {
     if (sectionId === "home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
       setActiveSection("home");
@@ -56,13 +77,11 @@ const Page = () => {
     }
   };
 
-  
-
   const sections = ["home", "about", "projects", "contact"];
 
   return (
     <div>
-      <nav className="fixed top-0 left-0 w-full bg-white z-50 px-[10%] py-4 flex justify-between items-center">
+      <nav className="fixed top-0 left-0 w-full nav-bg z-50 px-[10%] py-4 flex justify-between items-center">
         <div className="text-2xl font-bold textblue1 ">SamRytech</div>
         <div className="hidden md:flex items-center space-x-8">
           {sections.map((item) => (
@@ -79,9 +98,17 @@ const Page = () => {
             </button>
           ))}
         </div>
+        <div>
+          <button
+            onClick={toggleDarkMode}
+            className="ml-6 px-3 py-1 rounded-full  border-blue-500 text-blue-600 dark:text-yellow-300 dark:border-yellow-400 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white transition"
+          >
+            {darkMode ? "☀️" : "🌙"}
+          </button>
+        </div>
       </nav>
 
-      <div className="mt-30 flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="pt-30 flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mt-15 mr-45">
           <div className="text-8xl  textblue1 ">
             Hi, I'm
@@ -317,7 +344,7 @@ const Page = () => {
                 </label>
                 <input
                   type="text"
-                  name="name"
+                  name="Name"
                   className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 dark:bg-gray-800 dark:text-white transition-colors duration-200"
                   placeholder="Your Name"
                 />
@@ -328,7 +355,7 @@ const Page = () => {
                 </label>
                 <input
                   type="email"
-                  name="email"
+                  name="Email"
                   className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 dark:bg-gray-800 dark:text-white transition-colors duration-200"
                   placeholder="your.email@example.com"
                 />
@@ -339,7 +366,7 @@ const Page = () => {
                 </label>
                 <textarea
                   rows={5}
-                  name="message"
+                  name="Message"
                   className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 dark:bg-gray-800 dark:text-white transition-colors duration-200"
                   placeholder="Tell me about your project..."
                 ></textarea>
@@ -350,28 +377,41 @@ const Page = () => {
               >
                 Send Message
               </button>
+
+              {submissionStatus === "success" && (
+                <div className="flex items-center text-green-600 mt-4">
+                  <span className="text-2xl mr-2">✔️</span>
+                  <p>Message sent successfully!</p>
+                </div>
+              )}
+              {submissionStatus === "error" && (
+                <div className="flex items-center text-red-600 mt-4">
+                  <span className="text-2xl mr-2">❌</span>
+                  <p>Something went wrong. Please try again.</p>
+                </div>
+              )}
             </form>
           </div>
         </div>
       </section>
 
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="  py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <span className="text-2xl font-bold">SamRytech</span>
-              <p className="text-gray-400 mt-2">Front End Developer</p>
+              <span className="text-2xl textblue1 font-bold">SamRytech</span>
+              <p className="textblue1 mt-2">Front End Developer</p>
             </div>
             <div className="flex space-x-6">
               <a
                 href="https://github.com/Sam-Rytech"
-                className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                className="textblue1 hover:text-blue-400 transition-colors duration-200"
               >
                 GitHub
               </a>
               <a
                 href=""
-                className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                className="textblue1 hover:text-blue-400 transition-colors duration-200"
               >
                 LinkedIn
               </a>
@@ -379,16 +419,14 @@ const Page = () => {
                 href="https://x.com/Sam_rytech"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                className="textblue1 hover:text-blue-400 transition-colors duration-200"
               >
                 Twitter
               </a>
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-            <p className="text-gray-400">
-              © 2024 SamRytech. All rights reserved.
-            </p>
+            <p className="textblue1">© 2024 SamRytech. All rights reserved.</p>
           </div>
         </div>
       </footer>
