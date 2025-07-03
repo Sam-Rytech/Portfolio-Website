@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import "./globals.css";
+import Image from "next/image";
 
 const Page = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -100,6 +101,7 @@ const Page = () => {
         </div>
         <div>
           <button
+            type="button"
             onClick={toggleDarkMode}
             className="ml-6 px-3 py-1 rounded-full  border-blue-500 text-blue-600 dark:text-yellow-300 dark:border-yellow-400 hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white transition"
           >
@@ -111,13 +113,14 @@ const Page = () => {
       <div className="pt-30 flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mt-15 mr-45">
           <div className="text-8xl  textblue1 ">
-            Hi, I'm
+            Hi, I&apos;m
             <br />
             <span className="text-gradient">SamRytech</span>
           </div>
           <div className=" textblue2 text-2xl mt-5">A Front End Developer</div>
           <div className="mt-5">
             <button
+              type="button"
               onClick={() => {
                 const element = document.getElementById("projects");
                 if (element) {
@@ -131,48 +134,17 @@ const Page = () => {
           </div>
         </div>
         <div className="">
-          <img
+          <Image
             src="/images/Pf.png"
-            alt=""
+            alt="Profile picture"
+            width={140}
+            height={500}
             className="w-140"
             draggable={false}
+            priority // Optional: only use on above-the-fold images
           />
         </div>
       </div>
-
-      {/* <div id="about" className="scroll-mt-24 mt-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center">
-            <span className="textblue1 text-4xl mb-4">About Me</span>
-          </div>
-          <div className="w-20 h-1 custom-gradient mx-auto"></div>
-          <div>
-            <span className="textblue1">
-              I'm SamRytech, a creative and passionate Front End Developer
-              focused on building clean, responsive and user-friendly websites.
-              My journey into tech began with a deep curiosity about how
-              websites function, which soon evolved into a commitment to
-              crafting elegant and effective digital experiences.
-            </span>
-          </div>
-        </div>
-        <div>
-          <div>
-            <span>Tech Stack</span>
-          </div>
-          <div>
-            <ul className="flex">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-              <li>React</li>
-              <li>NextJS</li>
-              <li>TailwindCSS</li>
-              <li>Typesript</li>
-            </ul>
-          </div>
-        </div>
-      </div> */}
 
       <section id="about" className="relative min-h-screen py-20">
         <div className="container mx-auto px-4">
@@ -345,6 +317,7 @@ const Page = () => {
                 <input
                   type="text"
                   name="Name"
+                  required
                   className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 dark:bg-gray-800 dark:text-white transition-colors duration-200"
                   placeholder="Your Name"
                 />
@@ -356,6 +329,7 @@ const Page = () => {
                 <input
                   type="email"
                   name="Email"
+                  required
                   className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 dark:bg-gray-800 dark:text-white transition-colors duration-200"
                   placeholder="your.email@example.com"
                 />
@@ -367,6 +341,7 @@ const Page = () => {
                 <textarea
                   rows={5}
                   name="Message"
+                  required
                   className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 dark:bg-gray-800 dark:text-white transition-colors duration-200"
                   placeholder="Tell me about your project..."
                 ></textarea>
