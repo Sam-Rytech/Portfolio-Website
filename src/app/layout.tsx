@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     url: "https://samrytech.vercel.app/",
     type: "website",
   },
+  icons: {
+    icon: "https://vercel.com/favicon.ico",
+  },
 };
 
 export default function RootLayout({
