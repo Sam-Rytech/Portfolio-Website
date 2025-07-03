@@ -13,8 +13,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Your App",
-  description: "A cool portfolio",
+  title: "SamRytech - Frontend Developer",
+  description:
+    "Creative and passionate Frontend Developer building clean, responsive websites.",
+  openGraph: {
+    title: "SamRytech Portfolio",
+    description: "Explore my projects and get in touch.",
+    url: "https://samrytech.vercel.app/",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
