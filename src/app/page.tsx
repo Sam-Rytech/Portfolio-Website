@@ -4,8 +4,45 @@ import "./globals.css";
 
 const Page = () => {
   const [activeSection, setActiveSection] = useState("home");
+  const [submissionStatus, setSubmissionStatus] = useState<
+    "success" | "error" | null
+  >(null);
 
-  const scrollToSection = (sectionId: string) => {
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const data = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      message: formData.get("message") as string,
+    };
+
+    const response = await fetch("https://formspree.io/f/mdkzjpkd", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+      setSubmissionStatus("success");
+      form.reset();
+    } else {
+      setSubmissionStatus("error");
+    }
+
+    // Reset the message after a few seconds
+    setTimeout(() => setSubmissionStatus(null), 5000);
+  };
+  
+
+  const scrollToSection = (sectionId: string) => {    
     if (sectionId === "home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
       setActiveSection("home");
@@ -18,6 +55,8 @@ const Page = () => {
       setActiveSection(sectionId);
     }
   };
+
+  
 
   const sections = ["home", "about", "projects", "contact"];
 
@@ -243,12 +282,8 @@ const Page = () => {
                     📧
                   </div>
                   <div>
-                    <h4 className="font-semibold textblue1">
-                      Email
-                    </h4>
-                    <p className="textblue1">
-                      temitayoomolayo@gmail.com
-                    </p>
+                    <h4 className="font-semibold textblue1">Email</h4>
+                    <p className="textblue1">temitayoomolayo@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -256,12 +291,8 @@ const Page = () => {
                     📱
                   </div>
                   <div>
-                    <h4 className="font-semibold textblue1">
-                      Phone
-                    </h4>
-                    <p className="textblue1">
-                      +234 814 794 1672
-                    </p>
+                    <h4 className="font-semibold textblue1">Phone</h4>
+                    <p className="textblue1">+234 814 794 1672</p>
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -269,44 +300,46 @@ const Page = () => {
                     📍
                   </div>
                   <div>
-                    <h4 className="font-semibold textblue1">
-                      Location
-                    </h4>
-                    <p className="text-gray-600 dark:text-gray-300">
-                      San Francisco, CA
-                    </p>
+                    <h4 className="font-semibold textblue1">Location</h4>
+                    <p className="textblue1">Akure, Ondo State</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <form className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg">
+            <form
+              onSubmit={handleSubmit}
+              className=" p-8 rounded-xl shadow-2xl"
+            >
               <div className="mb-6">
-                <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">
+                <label className="block textblue1 text-sm font-bold mb-2">
                   Name
                 </label>
                 <input
                   type="text"
+                  name="name"
                   className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 dark:bg-gray-800 dark:text-white transition-colors duration-200"
                   placeholder="Your Name"
                 />
               </div>
               <div className="mb-6">
-                <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">
+                <label className="block textblue1 text-sm font-bold mb-2">
                   Email
                 </label>
                 <input
                   type="email"
+                  name="email"
                   className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 dark:bg-gray-800 dark:text-white transition-colors duration-200"
                   placeholder="your.email@example.com"
                 />
               </div>
               <div className="mb-6">
-                <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">
+                <label className="block textblue1 text-sm font-bold mb-2">
                   Message
                 </label>
                 <textarea
                   rows={5}
+                  name="message"
                   className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 dark:bg-gray-800 dark:text-white transition-colors duration-200"
                   placeholder="Tell me about your project..."
                 ></textarea>
