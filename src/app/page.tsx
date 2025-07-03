@@ -156,11 +156,11 @@ const Page = () => {
             <div className="gradient-border glass-effect rounded-xl p-8 ml-26">
               <div className="mt-6 space-y-4 textblue">
                 <p>
-                  I'm a passionate Front-End Developer with a love for turning
-                  ideas into visually stunning, responsive, and user-focused web
-                  experiences. My journey into tech began after high school,
-                  when I built my first website, and I’ve been hooked ever
-                  since.
+                  I&apos;m a passionate Front-End Developer with a love for
+                  turning ideas into visually stunning, responsive, and
+                  user-focused web experiences. My journey into tech began after
+                  high school, when I built my first website, and I&apos;ve been
+                  hooked ever since.
                 </p>
                 <p>
                   I specialize in modern web technologies like HTML, CSS,
@@ -169,9 +169,9 @@ const Page = () => {
                   bridging the gap between beautiful design and functional code.
                 </p>
                 <p>
-                  Outside of development, you’ll often find me exploring design
-                  trends, contributing to open-source projects, or learning
-                  something new to keep growing as a developer.
+                  Outside of development, you&apos;ll often find me exploring
+                  design trends, contributing to open-source projects, or
+                  learning something new to keep growing as a developer.
                 </p>
               </div>
             </div>
@@ -268,8 +268,8 @@ const Page = () => {
             <h2 className="text-4xl font-bold textblue1 mb-4">Get In Touch</h2>
             <div className="w-20 h-1 custom-gradient mx-auto"></div>
             <p className="text-lg textblue1 mt-6">
-              I'm always open to discussing new opportunities and interesting
-              projects.
+              I&apos;m always open to discussing new opportunities and
+              interesting projects.
             </p>
           </div>
 
