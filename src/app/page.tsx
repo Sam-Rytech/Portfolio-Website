@@ -8,14 +8,11 @@ const Page = () => {
 
   const [darkMode, setDarkMode] = useState(false);
 
-  // On mount, check system preference or localStorage
   useEffect(() => {
     const isDark = document.documentElement.classList.contains("dark");
     setDarkMode(isDark);
   }, []);
-  
 
-  // Toggle theme
   const toggleDarkMode = () => {
     const newMode = !darkMode;
     setDarkMode(newMode);
@@ -60,7 +57,6 @@ const Page = () => {
       setSubmissionStatus("error");
     }
 
-    // Reset the message after a few seconds
     setTimeout(() => setSubmissionStatus(null), 5000);
   };
 
@@ -83,7 +79,7 @@ const Page = () => {
   return (
     <div>
       <nav className="fixed top-0 left-0 w-full nav-bg z-50 px-[10%] py-4 flex justify-between items-center">
-        <div className="text-2xl font-bold textblue1 ">SamRytech</div>
+        <div className="text-xl md:text-2xl font-bold textblue1">SamRytech</div>
         <div className="hidden md:flex items-center space-x-8">
           {sections.map((item) => (
             <button
@@ -110,14 +106,14 @@ const Page = () => {
         </div>
       </nav>
 
-      <div className="pt-30 flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mt-15 mr-45">
-          <div className="text-8xl  textblue1 ">
+      <div className="pt-30 flex flex-col-reverse [@media(min-width:760px)]:flex-row items-center [@media(min-width:760px)]:items-start max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mt-15 [@media(min-width:760px)]:mr-45 w-full flex flex-col items-center [@media(min-width:760px)]:items-start text-center [@media(min-width:760px)]:text-left">
+          <div className="text-[48px] [@media(min-width:1035px)]:text-[60px] font-bold textblue1 leading-tight">
             Hi, I&apos;m
             <br />
             <span className="text-gradient">SamRytech</span>
           </div>
-          <div className=" textblue2 text-2xl mt-5">A Front End Developer</div>
+          <div className="textblue2 text-2xl mt-5">A Front End Developer</div>
           <div className="mt-5">
             <button
               type="button"
@@ -133,20 +129,20 @@ const Page = () => {
             </button>
           </div>
         </div>
-        <div className="">
-          <Image
+
+        <div className="flex justify-center w-full [@media(min-width:760px)]:justify-start">
+          <img
             src="/images/Pf.png"
             alt="Profile picture"
             width={140}
             height={500}
             className="w-140"
             draggable={false}
-            priority // Optional: only use on above-the-fold images
           />
         </div>
       </div>
 
-      <section id="about" className="relative min-h-screen py-20">
+      <section id="about" className="relative py-20">
         <div className="container mx-auto px-4">
           <h2 className="section-heading text-center ">
             <span className="textblue1 text-4xl font-bold">About Me</span>
