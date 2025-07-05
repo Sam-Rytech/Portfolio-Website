@@ -144,14 +144,14 @@ const Page = () => {
 
       <section id="about" className="relative py-20">
         <div className="container mx-auto px-4">
-          {/* Heading */}
+          
           <h2 className="section-heading text-center">
             <span className="textblue1 text-4xl font-bold">About Me</span>
           </h2>
           <div className="w-20 h-1 custom-gradient mx-auto mt-4"></div>
 
           <div className="mt-15 grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Left Column */}
+            
             <div className="gradient-border glass-effect rounded-xl p-6 sm:p-8 w-full border border-white">
               <div className="space-y-4 textblue text-left">
                 <p>
@@ -174,7 +174,6 @@ const Page = () => {
               </div>
             </div>
 
-            {/* Right Column - Stats */}
             <div className="gradient-border glass-effect rounded-xl p-6 sm:p-8 w-full border border-white flex flex-col justify-center">
               <div className="grid grid-cols-2 gap-6 text-left">
                 <div className="stat-item">
