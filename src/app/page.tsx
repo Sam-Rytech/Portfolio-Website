@@ -144,13 +144,16 @@ const Page = () => {
 
       <section id="about" className="relative py-20">
         <div className="container mx-auto px-4">
-          <h2 className="section-heading text-center ">
+          {/* Heading */}
+          <h2 className="section-heading text-center">
             <span className="textblue1 text-4xl font-bold">About Me</span>
           </h2>
           <div className="w-20 h-1 custom-gradient mx-auto mt-4"></div>
-          <div className="mt-15 grid gap-12 lg:grid-cols-2">
-            <div className="gradient-border glass-effect rounded-xl p-8 ml-26">
-              <div className="mt-6 space-y-4 textblue">
+
+          <div className="mt-15 grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Left Column */}
+            <div className="gradient-border glass-effect rounded-xl p-6 sm:p-8 w-full border border-white">
+              <div className="space-y-4 textblue text-left">
                 <p>
                   I&apos;m a passionate Front-End Developer with a love for
                   turning ideas into visually stunning, responsive, and
@@ -161,8 +164,7 @@ const Page = () => {
                 <p>
                   I specialize in modern web technologies like HTML, CSS,
                   JavaScript, React, Next.js, and TailwindCSS, with a strong
-                  focus on clean design, performance, and accessibility. I love
-                  bridging the gap between beautiful design and functional code.
+                  focus on clean design, performance, and accessibility.
                 </p>
                 <p>
                   Outside of development, you&apos;ll often find me exploring
@@ -171,49 +173,29 @@ const Page = () => {
                 </p>
               </div>
             </div>
-            <div className="space-y-8">
-              <div className="gradient-border glass-effect rounded-xl p-8">
-                <div className="grid grid-cols-2 gap-6 pt-5">
-                  <div
-                    className="stat-item text-center"
-                    style={{
-                      transform: "translate(0px, 0px) rotate(0deg) scale(1)",
-                      opacity: 1,
-                    }}
-                  >
-                    <div className="font-montserrat text-3xl font-bold textblue1">
-                      1+
-                    </div>
-                    <div className="mt-2 text-sm textblue1">
-                      Years Experience
-                    </div>
+
+            {/* Right Column - Stats */}
+            <div className="gradient-border glass-effect rounded-xl p-6 sm:p-8 w-full border border-white flex flex-col justify-center">
+              <div className="grid grid-cols-2 gap-6 text-left">
+                <div className="stat-item">
+                  <div className="font-montserrat text-3xl font-bold textblue1">
+                    1+
                   </div>
-                  <div
-                    className="stat-item text-center"
-                    style={{
-                      transform: "translate(0px, 0px) rotate(0deg) scale(1)",
-                      opacity: 1,
-                    }}
-                  >
-                    <div className="font-montserrat text-3xl font-bold textblue1">
-                      10+
-                    </div>
-                    <div className="mt-2 text-sm textblue1">
-                      Projects Completed
-                    </div>
+                  <div className="mt-2 text-sm textblue1">Years Experience</div>
+                </div>
+                <div className="stat-item">
+                  <div className="font-montserrat text-3xl font-bold textblue1">
+                    10+
                   </div>
-                  <div
-                    className="stat-item text-center"
-                    style={{
-                      transform: "translate(0px, 0px) rotate(0deg) scale(1)",
-                      opacity: 1,
-                    }}
-                  >
-                    <div className="font-montserrat text-3xl font-bold textblue1">
-                      6+
-                    </div>
-                    <div className="mt-2 text-sm textblue1">Technologies</div>
+                  <div className="mt-2 text-sm textblue1">
+                    Projects Completed
                   </div>
+                </div>
+                <div className="stat-item col-span-2 sm:col-span-1">
+                  <div className="font-montserrat text-3xl font-bold textblue1">
+                    6+
+                  </div>
+                  <div className="mt-2 text-sm textblue1">Technologies</div>
                 </div>
               </div>
             </div>
@@ -228,29 +210,31 @@ const Page = () => {
           </span>
           <div className="w-20 h-1 custom-gradient mx-auto mt-4"></div>
         </div>
+
         <div className="mx-auto text-center">
           <span>
             A showcase of my works, including completed and ongoing projects
           </span>
         </div>
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3 mx-[10%]">
-          <div className="w-[350px] h-[268px] border rounded-2xl">
+
+        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto place-items-center">
+          <div className="w-[90%] md:w-full md:max-w-[350px] h-[268px] border rounded-2xl mx-auto">
             Projects One
           </div>
-          <div className="w-[350px] h-[268px] border rounded-2xl">
+          <div className="w-[90%] md:w-full md:max-w-[350px] h-[268px] border rounded-2xl mx-auto">
             Project Two
           </div>
-          <div className="w-[350px] h-[268px] border rounded-2xl">
+          <div className="w-[90%] md:w-full md:max-w-[350px] h-[268px] border rounded-2xl mx-auto">
             Project Three
           </div>
-          <div className="w-[350px] h-[268px] border rounded-2xl">
-            Project Three
+          <div className="w-[90%] md:w-full md:max-w-[350px] h-[268px] border rounded-2xl mx-auto">
+            Project Four
           </div>
-          <div className="w-[350px] h-[268px] border rounded-2xl">
-            Project Three
+          <div className="w-[90%] md:w-full md:max-w-[350px] h-[268px] border rounded-2xl mx-auto">
+            Project Five
           </div>
-          <div className="w-[350px] h-[268px] border rounded-2xl">
-            Project Three
+          <div className="w-[90%] md:w-full md:max-w-[350px] h-[268px] border rounded-2xl mx-auto">
+            Project Six
           </div>
         </div>
       </div>
@@ -366,10 +350,10 @@ const Page = () => {
         </div>
       </section>
 
-      <footer className="  py-12">
+      <footer className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
+            <div className="mb-4 md:mb-0 text-center md:text-left">
               <span className="text-2xl textblue1 font-bold">SamRytech</span>
               <p className="textblue1 mt-2">Front End Developer</p>
             </div>
