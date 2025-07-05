@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import "./globals.css";
-import Image from "next/image";
+// import Image from "next/image"
 
 const Page = () => {
   const [activeSection, setActiveSection] = useState("home");
