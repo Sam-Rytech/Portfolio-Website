@@ -378,7 +378,7 @@ const Page = () => {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-            <p className="textblue1">© 2024 SamRytech. All rights reserved.</p>
+            <p className="textblue1">© 2025 SamRytech. All rights reserved.</p>
           </div>
         </div>
       </footer>
